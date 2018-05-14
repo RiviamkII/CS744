@@ -1,0 +1,73 @@
+﻿@model _744Project.Models.Relay
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container">
+    <h2>Details</h2>
+    <div class="panel panel-default">
+        <div class="panel-body">
+
+            <div>
+                <h4>Relay</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Region.regionName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Region.regionName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.relayName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.relayName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.relayIP)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.relayIP)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.isGateway)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.isGateway)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.relayQueue)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.relayQueue)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.isActive)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.isActive)
+                    </dd>
+
+                </dl>
+            </div>
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.relayID }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+
+</div>
+</div>
+</div>

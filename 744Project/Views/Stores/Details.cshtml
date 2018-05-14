@@ -1,0 +1,65 @@
+﻿@model _744Project.Models.Store
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container">
+    <h2>Details</h2>
+    <div class="panel panel-default">
+        <div class="panel-body">
+
+            <div>
+                <h4>Store</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Region.regionName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Region.regionName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Relay.relayName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Relay.relayName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.storeIP)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.storeIP)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.storeName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.storeName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.storeWeight)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.storeWeight)
+                    </dd>
+
+                </dl>
+            </div>
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.storeID }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+
+</div>
+</div>
+</div>

@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Team Saturn</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*@Html.ActionLink("Team Saturn", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
+                   
+                </ul>
+                @*@Html.Partial("_LoginPartial")*@
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @*@RenderBody()*@
+        <hr />
+        <footer>
+            <!-- <p>&copy; @DateTime.Now.Year - Team Saturn</p>-->
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @*@RenderSection("scripts", required: false)*@
+
+
+
+    @using _744Project.Models
+    @model LoginViewModel
+    @{
+        ViewBag.Title = "Index";
+    }
+
+    <div class="container">
+        <h2>Security Question</h2>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form method="post" action="~/SecurityQuestions/Index">
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.SecuriyQuestion, new { @class = "col-md-2 control-label" })
+                        <div style="display:inline">
+                            <p style="color: #000a0e">@Model.SecuriyQuestion</p>
+                        </div>
+                        <div style="display:none" class="col-md-10">
+                            @Html.PasswordFor(m => m.SecuriyQuestion, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.SecuriyQuestion, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div style="color:red">@ViewBag.Security</div>
+                        @Html.LabelFor(m => m.AnswerToSecurityQuestion, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            <input id="answer" type="password" name="answer" value="" class="form-control" />
+                            @Html.ValidationMessage("answer", "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input style="background-color:#6EEF2B; font-size:large; font-weight: bold " id="submit" type="submit" value="Submit" class="btn btn-default" />                            
+                        </div>
+                    </div>
+                </form>
+                <form method="post" action="~/SecurityQuestions/Cancel">
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input style="background-color:#da5858; font-size:large; font-weight: bold " id="cancel" type="submit" value="Cancel" class="btn btn-default" />
+                        </div>
+                   </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

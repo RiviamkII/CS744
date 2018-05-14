@@ -1,0 +1,118 @@
+﻿@model IEnumerable<_744Project.Models.Account>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="container">
+    <h2>Index</h2>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+            <table class="table">
+                <tr>
+                    @*<th>
+            @Html.DisplayNameFor(model => model.Customer.customerFirstname)
+        </th>*@
+                    <th>
+                        @Html.DisplayNameFor(model => model.accountNumber)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.accountBalance)
+                    </th>
+                    @*<th>
+                        @Html.DisplayNameFor(model => model.accountName)
+                    </th>*@
+                   
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.accountFirstName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.accountLastName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.accountAddress)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.accountCity)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.accountState)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.accountZip)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.accountPhone)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.accountMax)
+                    </th>
+
+
+
+
+
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                <tr>
+                    @*<td>
+            @Html.DisplayFor(modelItem => item.Customer.customerFirstname)
+        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.accountNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.accountBalance)
+                    </td>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.accountName)
+                    </td>*@
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.accountFirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.accountLastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.accountAddress)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.accountCity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.accountState)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.accountZip)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.accountPhone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.accountMax)
+                    </td>                    
+
+
+
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.accountID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.accountID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.accountID })
+                    </td>
+                </tr>
+                }
+
+            </table>
+        </div>
+        </div>
+    </div>

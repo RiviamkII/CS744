@@ -1,0 +1,82 @@
+﻿@model _744Project.ViewModels.NetworkEntityViewModel
+
+
+<div>
+	<h3>
+		@if(Model.type == 0)
+		{
+			<span>Store</span>
+		}
+		@if(Model.type == 1)
+		{
+			<span>Relay</span>
+		}
+		@if(Model.type == 2)
+		{
+			<span>Processing Center</span>
+		}
+	</h3>
+<!--using (Html.BeginForm())
+{-->
+	<div>
+		<dl class="dl-horizontal">
+			<dt>Ip</dt>
+			<dd>@Model.ip</dd>
+			<dt>Name</dt>
+			<dd>@Model.name</dd>
+			<dt>Active</dt>
+			<dd>@Model.isActive</dd>
+			<dt>Gateway</dt>
+			<dd>@Model.isGateway</dd>
+			<dt>Queue Limit</dt>
+			<dd>@Model.queueLimit</dd>
+			<dt>Queue Contents</dt>
+			<dd id="modalQueue"><dd>
+			<dt>Region</dt>
+			<dd>@Model.region</dd>
+		</dl>
+	</div>
+	<!--<button onclick="Activate(@Model.id,@Model.type)" id="Activate" class="btn btn-default Activate" >Activate</button>-->
+	<div class="form-group">
+	
+		<div class="col-md-offset-2 col-md-10">
+			@if (Model.isActive && Model.type == 1)
+			{
+				<!--<input type="submit" id="@Model.id" value="Inactivate" class="btn btn-default" />-->
+				<button onclick="Activate(@Model.id,@Model.type,'@Model.ip')" id="Activate" class="btn btn-default Activate">Inactivate</button>
+			}
+			@if(!Model.isActive && Model.type == 1)
+			{
+				<!--<input type="submit" value="Activate" class="btn btn-default" />-->
+				<button onclick="Activate(@Model.id,@Model.type,'@Model.ip')" id="Activate" class="btn btn-default Activate">Activate</button>
+			}
+		</div>
+	</div>
+	@if(Model.type == 2)
+	{
+		<div id="PCTransactionList" class="table table-bordered">
+			
+		</div>
+	}
+
+</div>
+
+@section Scripts{
+	<script>
+
+		processingCenterQueue.forEach(function (element) {
+			console.log(element);
+			$("PCTransactionList").append('<div id="innerDiv">1</div>');
+		});
+
+		NetworkElements.nodes.forEach(function (node) {
+			if (node.id == @Model.ip){
+				node.data.queue.forEach(function (item) {
+					console.log("Item: " + item);
+					$("#modalQueue").append('<div>' + item + '</div>');
+				});
+				
+			}
+		});
+	</script>
+}

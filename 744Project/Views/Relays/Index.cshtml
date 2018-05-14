@@ -1,0 +1,71 @@
+﻿@model IEnumerable<_744Project.Models.Relay>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <h2>Index</h2>
+    <div class="panel panel-default">
+        <div class="panel-body">
+
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Region.regionName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.relayName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.relayIP)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.isGateway)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.relayQueue)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.isActive)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Region.regionName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.relayName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.relayIP)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.isGateway)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.relayQueue)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.isActive)
+                        </td>
+                        <td>
+                            @*@Html.ActionLink("Edit", "Edit", new { id = item.relayID }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.relayID }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.relayID })*@
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+</div>
+</div>
+</div>
